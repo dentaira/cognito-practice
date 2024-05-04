@@ -17,6 +17,12 @@ jobs:
         working-directory: ./frontend
     steps:
       - uses: actions/checkout@v4
+      - name: Prepare .env.production file
+        run: |
+          cat << EOF > .env.production
+          VITE_AUTH_USER_POOL_ID=${{ secrets.VITE_AUTH_USER_POOL_ID }}
+          VITE_AUTH_USER_POOL_WEB_CLIENT_ID=${{ secrets.VITE_AUTH_USER_POOL_WEB_CLIENT_ID }}
+          EOF
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
