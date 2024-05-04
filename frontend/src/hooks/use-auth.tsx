@@ -86,6 +86,7 @@ const useProvideAuth = (): UseAuth => {
       setPassword("");
       return result;
     } catch (error) {
+      console.log(error);
       return {
         success: false,
         message: "認証に失敗しました。",
@@ -100,6 +101,7 @@ const useProvideAuth = (): UseAuth => {
       setIsAuthenticated(true);
       return { success: true, message: "" };
     } catch (error) {
+      console.log(error);
       return {
         success: false,
         message: "認証に失敗しました。",
@@ -114,6 +116,7 @@ const useProvideAuth = (): UseAuth => {
       setIsAuthenticated(false);
       return { success: true, message: "" };
     } catch (error) {
+      console.log(error);
       return {
         success: false,
         message: "ログアウトに失敗しました。",
