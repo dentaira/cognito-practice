@@ -33,7 +33,7 @@ interface Result {
 
 const authContext = createContext({} as UseAuth);
 
-export const ProvideAuth: React.FC = ({ children }) => {
+export const ProvideAuth: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const auth = useProvideAuth();
   return <authContext.Provider value={auth}>{children}</authContext.Provider>;
 };
