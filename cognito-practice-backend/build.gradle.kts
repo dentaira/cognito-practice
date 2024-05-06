@@ -30,6 +30,9 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.4.0")
+
+    implementation("software.amazon.awssdk:cognitoidentity:2.25.45")
+    implementation("software.amazon.awssdk:cognitoidentityprovider:2.25.45")
 }
 
 tasks.withType<Test> {
